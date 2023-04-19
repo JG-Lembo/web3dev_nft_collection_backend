@@ -4,9 +4,9 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.1",
   networks: {
-    sepolia: {
-      url: "https://eth-sepolia.g.alchemy.com/v2/fOfhULzCAGh_afiEKYVQa6pUm5AWtbGf",
-      accounts: [process.env.SEPOLIA_PRIVATE_KEY],
+    mumbai: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/aUBF_4iZcTC6vp7vBdNa5f083XEqLhLt",
+      accounts: [process.env.MUMBAI_PRIVATE_KEY],
     },
   },
 };
