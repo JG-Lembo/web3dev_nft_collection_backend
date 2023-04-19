@@ -8,10 +8,6 @@ const main = async () => {
     // Espera ela ser minerada.
     await txn.wait()
     console.log("Cunhou NFT #1")
-    txn = await nftContract.makeAnEpicNFT()
-    // Espera ela ser minerada.
-    await txn.wait()
-    console.log("Cunhou NFT #2")
 }
 const runMain = async () => {
     try {
