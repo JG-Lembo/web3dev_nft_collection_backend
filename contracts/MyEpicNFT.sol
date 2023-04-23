@@ -21,6 +21,8 @@ contract MyEpicNFT is ERC721URIStorage {
     string[] secondWords = ["Charmeleon", "Ivysaur", "Wartortle", "Bayleef", "Quilava", "Croconaw", "Combusken", "Grovyle", "Marshtomp", "Monferno", "Prinplup", "Grotle", "Servine", "Dewott", "Pignite"];
     string[] thirdWords = ["Charizard", "Venusaur", "Blastoise", "Meganium", "Typhlosion", "Feraligatr", "Blaziken", "Sceptile", "Swampert", "Infernape", "Empoleon", "Torterra", "Serperior", "Samurott", "Emboar"];
     
+    event NewEpicNFTMinted(address sender, uint256 tokenId);
+
     // Nós precisamos passar o nome do nosso token NFT e o símbolo dele.
     constructor() ERC721 ("SquareNFT", "SQUARE"){
       console.log("Meu primeiro contrato de NFT! - Ass: JG10");
@@ -92,5 +94,6 @@ contract MyEpicNFT is ERC721URIStorage {
         console.log("Um NFT com o ID %s foi mintado para %s", newItemId, msg.sender);
         // Incrementa o contador para quando o próximo NFT for mintado.
         _tokenIds.increment();
+        emit NewEpicNFTMinted(msg.sender, newItemId);
     }
 }
