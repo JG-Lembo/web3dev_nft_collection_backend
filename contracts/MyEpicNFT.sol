@@ -52,6 +52,10 @@ contract MyEpicNFT is ERC721URIStorage {
 
     // Uma função que o nosso usuário irá chamar para pegar sua NFT.
     function makeAnEpicNFT() public {
+
+        require(_tokenIds.current() < 1000,
+          "O numero maximo de NFTs cunhados desta colecao ja foi atingido.");
+
         // Pega o tokenId atual, que começa por 0.
         uint256 newItemId = _tokenIds.current();
 
@@ -95,5 +99,9 @@ contract MyEpicNFT is ERC721URIStorage {
         // Incrementa o contador para quando o próximo NFT for mintado.
         _tokenIds.increment();
         emit NewEpicNFTMinted(msg.sender, newItemId);
+    }
+
+    function getTotalNFTsMintedSoFar() public view returns (uint256) {
+      return _tokenIds.current();
     }
 }
