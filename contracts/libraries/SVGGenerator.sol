@@ -1,14 +1,9 @@
-/**
- *Submitted for verification at Etherscan.io on 2021-09-05
- */
-
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.1;
 
 import "hardhat/console.sol";
 
-/// [MIT License]
 /// @title SVGGenerator
 /// @notice Provides a function for generating an svg
 /// @author João Gabriel Lembo <brecht@loopring.org>
